@@ -30,6 +30,11 @@ public class StepDefinitions {
         today = "Friday";
     }
 
+    @Given("today is {string}")
+    public void today_is(String today) {
+        this.today = today;
+    }
+
     @When("I ask whether it's Friday yet")
     public void i_ask_whether_it_s_Friday_yet() {
         isTodayFriday = isItFriday.isItFriday(today);
@@ -53,9 +58,5 @@ public class StepDefinitions {
         assertEquals(iceCreamInBowl, "".equals(string));
     }
 
-    @Given("today is {string}")
-    public void today_is(String today) {
-        this.today = today;
-    }
 }
 
